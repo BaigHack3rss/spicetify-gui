@@ -2,45 +2,77 @@ package spicetify;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class BaseWindow{
-    protected Parent root;
-    protected Scene scene;
-    protected Stage stage;
-    protected String title;
-    protected int width;
-    protected int height;
-    protected int red;
-    protected int green;
-    protected int blue;
+    private Parent root;
+    private Scene scene;
+    private Stage stage;
+    private String title;
+    private int width;
+    private int height;
+    private String htmlColor;
 
-    public BaseWindow(){
-        
+    public String getHtmlColor() {
+        return htmlColor;
     }
 
-    public BaseWindow(String title, int width, int height, int red, int green, int blue){
+    public void setHtmlColor(String htmlColor) {
+        this.htmlColor = htmlColor;
+    }
+
+    public Parent getRoot() {
+        return root;
+    }
+
+    public void setRoot(Parent root) {
+        this.root = root;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Stage getStage() {
+        return stage;
+    }
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
         this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
         this.height = height;
-        this.red = red;
-        this.green = green;
-        this.blue = blue;
-        this.root = new StackPane();
-        this.scene = new Scene(root, width, height, Color.rgb(red, green, blue));
-        this.stage = new Stage();
     }
 
     public void start(Stage stage){
         stage.setScene(scene);
         stage.setTitle(title);
         stage.show();
-    }
-
-    public Parent getRoot() {
-        return root;
     }
 }
 

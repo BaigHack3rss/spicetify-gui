@@ -10,20 +10,20 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
 
-public class ErrorWindow extends BaseWindow{
+public class ErrorWindow {
+    BaseWindow baseWindow = new BaseWindow();
     private String errorMessage;
     private Text errorText;
     private ImageView errorImage;
 
-    public ErrorWindow(String errorMessage, int width, int height, int red, int green, int blue){
+    public ErrorWindow(String errorMessage, int width, int height, String html){
         this.errorMessage = errorMessage;
         this.errorText = new Text(errorMessage);
         this.errorImage = new ImageView(new Image("file:src/main/resources/spicetify/images/essentials/Error.png"));
-        this.width = width;
-        this.height = height;
-        this.red = red;
-        this.green = green;
-        this.blue = blue;
+        baseWindow.setWidth(width);
+        baseWindow.setHeight(height);
+        baseWindow.setHtmlColor(html);
+
     }
 
     public void start(Stage stage){
@@ -31,11 +31,11 @@ public class ErrorWindow extends BaseWindow{
         errorText.setFont(Font.font("Source Code Pro", FontWeight.BOLD, 20));
         errorText.setFill(Color.RED);
         errorText.setTranslateY(200);
-        root = new StackPane(errorImage, errorText);
-        scene = new Scene(root, width, height, Color.rgb(red, green, blue));
+        baseWindow.setRoot(new StackPane(errorImage, errorText));
+        baseWindow.setScene(new Scene(baseWindow.getRoot(), baseWindow.getWidth(), baseWindow.getHeight(), Color.web(baseWindow.getHtmlColor())));
         stage.setTitle("Error");
-        stage.setScene(scene);
-        stage.setTitle(title);
+        stage.setScene(baseWindow.getScene());
+        stage.setResizable(false);
         stage.show();
     }
 }

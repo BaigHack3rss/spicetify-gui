@@ -2,6 +2,7 @@ package spicetify;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class BaseWindow{
@@ -11,7 +12,25 @@ public class BaseWindow{
     private String title;
     private int width;
     private int height;
+    private int minWidth;
+    private int minHeight;
     private String htmlColor;
+
+    public int getMinWidth() {
+        return minWidth;
+    }
+
+    public void setMinWidth(int minWidth) {
+        this.minWidth = minWidth;
+    }
+
+    public int getMinHeight() {
+        return minHeight;
+    }
+
+    public void setMinHeight(int minHeight) {
+        this.minHeight = minHeight;
+    }
 
     public String getHtmlColor() {
         return htmlColor;
@@ -69,6 +88,15 @@ public class BaseWindow{
         this.height = height;
     }
 
+    // Transform Image sizes to fit the window
+
+    public void transform(ImageView view, int width, int height, boolean preserveRatio){
+        view.setFitWidth(width);
+        view.setFitHeight(height);
+        view.setPreserveRatio(preserveRatio);
+    }
+
+    // Start the window
     public void start(Stage stage){
         stage.setScene(scene);
         stage.setTitle(title);

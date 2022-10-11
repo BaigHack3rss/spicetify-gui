@@ -1,8 +1,27 @@
 package spicetify;
 
+import java.io.File;
+
 public class OperatingSystem {
     private String OperatingSystem;
     private String configDirectory;
+    private String[] themes;
+
+    public OperatingSystem() {
+    }
+
+    public OperatingSystem(String operatingSystem, String configDirectory) {
+        OperatingSystem = operatingSystem;
+        this.configDirectory = configDirectory;
+    }
+
+    public String[] getThemes() {
+        return themes;
+    }
+
+    public void setThemes(String[] themes) {
+        this.themes = themes;
+    }
 
     public void setOperatingSystem(String OS){
         if (OS.toLowerCase().contains("win")){
@@ -34,5 +53,11 @@ public class OperatingSystem {
 
     public String getConfigDirectory(){
         return this.configDirectory;
+    }
+
+    public String[] listDirectory(String directory) {
+        File file = new File(directory);
+        String[] files = file.list();
+        return files;
     }
 }

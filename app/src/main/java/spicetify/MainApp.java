@@ -18,7 +18,7 @@ public class MainApp extends Application{
             errorWindow.start(stage);
         }
         else {
-            HomeWindow homeWindow = new HomeWindow(1280, 720, "#1c1c1c");
+            HomeWindow homeWindow = new HomeWindow(933, 581, "#1c1c1c");
             homeWindow.start(stage);
         }
     }

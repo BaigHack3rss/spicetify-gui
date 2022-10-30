@@ -1,0 +1,23 @@
+.background {
+    -fx-background-color: #1c1c1c;
+}
+
+.sidebar {
+    -fx-background-color: #282828;
+}
+
+.sidebarButtons {
+    -fx-background-color: #282828;
+}
+
+.sidebarButtons:hover {
+    -fx-background-color: rgba(30,30,30,0.85);
+}
+
+.sidebarButtons:pressed {
+    -fx-background-color: rgba(30,30,30,0.50);
+}
+
+.errorText {
+    -fx-text-fill: #ff0000;
+}

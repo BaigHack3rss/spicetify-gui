@@ -14,11 +14,11 @@ public class MainApp extends Application{
         os.setConfigDirectory(os.getOperatingSystem());
 
         if (os.getOperatingSystem().equals("Unknown")) {
-            ErrorWindow errorWindow = new ErrorWindow("Unknown Operating System", 600, 500, "#1c1c1c");
+            ErrorWindow errorWindow = new ErrorWindow();
             errorWindow.start(stage);
         }
         else {
-            HomeWindow homeWindow = new HomeWindow(933, 581, "#1c1c1c");
+            HomeWindow homeWindow = new HomeWindow();
             homeWindow.start(stage);
         }
     }

@@ -1,25 +1,40 @@
 package spicetify;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+
 
 public class MainApp extends Application{ 
+    private Parent root;
+    private Scene scene;
 
     @Override
     public void start(Stage stage) throws Exception {
         OperatingSystem os = new OperatingSystem();
 
         os.setOperatingSystem(System.getProperty("os.name"));
-        // os.setOperatingSystem("TruckOS");
+        // os.setOperatingSystem("jackHammer");
         os.setConfigDirectory(os.getOperatingSystem());
+        stage.setTitle("Spicetify");
+
 
         if (os.getOperatingSystem().equals("Unknown")) {
-            ErrorWindow errorWindow = new ErrorWindow();
-            errorWindow.start(stage);
+            root = FXMLLoader.load(getClass().getResource("FXML/ErrorWindow.fxml"));
+            scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("CSS/application.css").toExternalForm());
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
         }
         else {
-            HomeWindow homeWindow = new HomeWindow();
-            homeWindow.start(stage);
+            root = FXMLLoader.load(getClass().getResource("FXML/HomeWindow.fxml"));
+            scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("CSS/application.css").toExternalForm());
+            stage.setScene(scene);
+            stage.show();
         }
     }
 

@@ -59,11 +59,4 @@
          </children>
       </VBox>
    </left>
-   <center>
-      <ImageView fitHeight="308.0" fitWidth="616.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@../images/essentials/logo.png" />
-         </image>
-      </ImageView>
-   </center>
 </BorderPane>

@@ -4,10 +4,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="752.0" styleClass="background" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="752.0" styleClass="root" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <ImageView fitHeight="338.0" fitWidth="363.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
@@ -19,10 +19,13 @@
       </ImageView>
    </center>
    <bottom>
-      <Text fill="#c00101" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold; -fx-font-family: Roboto;" text="Error: Unsupported Operating system" textAlignment="CENTER" wrappingWidth="251.23835372924805" BorderPane.alignment="BOTTOM_CENTER">
+      <Text fx:id="errorText" fill="#c00101" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold; -fx-font-family: Roboto;" textAlignment="CENTER" wrappingWidth="251.23835372924805" BorderPane.alignment="BOTTOM_CENTER">
          <BorderPane.margin>
             <Insets bottom="30.0" />
          </BorderPane.margin>
+         <font>
+            <Font name="Source Code Pro Bold" size="10.0" />
+         </font>
       </Text>
    </bottom>
 </BorderPane>

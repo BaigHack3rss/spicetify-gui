@@ -2,12 +2,17 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="891.0" styleClass="background" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spicetify.FXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="891.0" styleClass="root" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spicetify.FXMLController">
    <left>
       <VBox prefHeight="601.0" prefWidth="100.0" styleClass="sidebar" stylesheets="@../CSS/application.css" BorderPane.alignment="CENTER">
          <children>
@@ -20,9 +25,10 @@
                   </ImageView>
                </graphic>
                <VBox.margin>
-                  <Insets bottom="40.0" />
+                  <Insets top="20.0" />
                </VBox.margin>
             </Button>
+            <Region prefHeight="200.0" prefWidth="200.0" />
             <Button fx:id="ThemeButton" mnemonicParsing="false" onAction="#switchToTheme" prefHeight="106.0" prefWidth="100.0" styleClass="sidebarButtons" stylesheets="@../CSS/application.css" textFill="TRANSPARENT">
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
@@ -32,9 +38,10 @@
                   </ImageView>
                </graphic>
                <VBox.margin>
-                  <Insets bottom="40.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
+            <Region prefHeight="200.0" prefWidth="200.0" />
             <Button fx:id="ExtensionButton" mnemonicParsing="false" onAction="#switchToExtension" prefHeight="106.0" prefWidth="100.0" styleClass="sidebarButtons" stylesheets="@../CSS/application.css" textFill="TRANSPARENT">
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
@@ -44,9 +51,10 @@
                   </ImageView>
                </graphic>
                <VBox.margin>
-                  <Insets bottom="40.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
+            <Region prefHeight="200.0" prefWidth="200.0" />
             <Button fx:id="EditButton" mnemonicParsing="false" onAction="#switchToEdit" prefHeight="106.0" prefWidth="100.0" styleClass="sidebarButtons" stylesheets="@../CSS/application.css" textFill="TRANSPARENT">
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
@@ -55,15 +63,46 @@
                      </image>
                   </ImageView>
                </graphic>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
             </Button>
          </children>
       </VBox>
    </left>
    <center>
-      <ImageView fitHeight="308.0" fitWidth="616.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@../images/essentials/logo.png" />
-         </image>
-      </ImageView>
+      <SplitPane fx:id="homePane1" dividerPositions="0.6237608177752434" prefHeight="160.0" prefWidth="200.0" styleClass="homePane" stylesheets="@../CSS/application.css" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane fx:id="homePane1_1" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ImageView fx:id="logoView" fitHeight="262.0" fitWidth="484.0" layoutX="-1.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/essentials/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <SplitPane fx:id="homePane2" dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" styleClass="homePane" SplitPane.resizableWithParent="false">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="267.0" prefWidth="251.0">
+                     <children>
+                        <ImageView fx:id="themePreview" fitHeight="207.0" fitWidth="231.0" layoutX="32.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+                        <Text fill="WHITE" layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current theme:">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="themeName" fill="WHITE" layoutX="84.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="126.8016357421875">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+              </items>
+            </SplitPane>
+        </items>
+      </SplitPane>
    </center>
 </BorderPane>

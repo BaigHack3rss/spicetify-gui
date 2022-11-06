@@ -5,9 +5,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="891.0" styleClass="background" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spicetify.FXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="891.0" styleClass="root" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spicetify.FXMLController">
    <left>
       <VBox prefHeight="601.0" prefWidth="100.0" styleClass="sidebar" stylesheets="@../CSS/application.css" BorderPane.alignment="CENTER">
          <children>
@@ -20,9 +21,10 @@
                   </ImageView>
                </graphic>
                <VBox.margin>
-                  <Insets bottom="40.0" />
+                  <Insets top="20.0" />
                </VBox.margin>
             </Button>
+            <Region prefHeight="200.0" prefWidth="200.0" />
             <Button fx:id="ThemeButton" mnemonicParsing="false" onAction="#switchToTheme" prefHeight="106.0" prefWidth="100.0" styleClass="sidebarButtons" stylesheets="@../CSS/application.css" textFill="TRANSPARENT">
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
@@ -32,9 +34,10 @@
                   </ImageView>
                </graphic>
                <VBox.margin>
-                  <Insets bottom="40.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
+            <Region prefHeight="200.0" prefWidth="200.0" />
             <Button fx:id="ExtensionButton" mnemonicParsing="false" onAction="#switchToExtension" prefHeight="106.0" prefWidth="100.0" styleClass="sidebarButtons" stylesheets="@../CSS/application.css" textFill="TRANSPARENT">
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
@@ -44,9 +47,10 @@
                   </ImageView>
                </graphic>
                <VBox.margin>
-                  <Insets bottom="40.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
+            <Region prefHeight="200.0" prefWidth="200.0" />
             <Button fx:id="EditButton" mnemonicParsing="false" onAction="#switchToEdit" prefHeight="106.0" prefWidth="100.0" styleClass="sidebarButtons" stylesheets="@../CSS/application.css" textFill="TRANSPARENT">
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
@@ -55,6 +59,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
             </Button>
          </children>
       </VBox>

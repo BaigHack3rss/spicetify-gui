@@ -1,4 +1,4 @@
-.background {
+.root {
     -fx-background-color: #1c1c1c;
 }
 
@@ -20,4 +20,17 @@
 
 .errorText {
     -fx-text-fill: #ff0000;
+}
+
+.homePane {
+    -fx-background-color: transparent;
+}
+
+.homePane > .split-pane-divider {
+    -fx-background-color: #00000025;
+
+}
+
+#regionDivider {
+    -fx-background-color: #00000025;
 }

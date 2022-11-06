@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="891.0" styleClass="root" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spicetify.FXMLController">
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="891.0" styleClass="root" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spicetify.FXMLController">
    <left>
       <VBox prefHeight="601.0" prefWidth="100.0" styleClass="sidebar" stylesheets="@../CSS/application.css" BorderPane.alignment="CENTER">
          <children>
@@ -73,32 +73,46 @@
    <center>
       <SplitPane fx:id="homePane1" dividerPositions="0.6237608177752434" prefHeight="160.0" prefWidth="200.0" styleClass="homePane" stylesheets="@../CSS/application.css" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane fx:id="homePane1_1" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <ImageView fx:id="logoView" fitHeight="262.0" fitWidth="484.0" layoutX="-1.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <BorderPane fx:id="homePane1_1" prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <ImageView fx:id="logoView" fitHeight="262.0" fitWidth="484.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                      <image>
                         <Image url="@../images/essentials/logo.png" />
                      </image>
                   </ImageView>
-               </children>
-            </AnchorPane>
-            <SplitPane fx:id="homePane2" dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" styleClass="homePane" SplitPane.resizableWithParent="false">
+               </top>
+               <center>
+                  <ImageView fx:id="appPreview" fitHeight="320.0" fitWidth="553.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../images/essentials/Preview.png" />
+                     </image>
+                     <BorderPane.margin>
+                        <Insets bottom="20.0" />
+                     </BorderPane.margin>
+                  </ImageView>
+               </center>
+            </BorderPane>
+            <SplitPane fx:id="homePane2" dividerPositions="0.5" maxWidth="250.0" minWidth="250.0" orientation="VERTICAL" styleClass="homePane" SplitPane.resizableWithParent="false">
               <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="267.0" prefWidth="251.0">
-                     <children>
-                        <ImageView fx:id="themePreview" fitHeight="207.0" fitWidth="231.0" layoutX="32.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
-                        <Text fill="WHITE" layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current theme:">
+                  <BorderPane fx:id="homePane2_1" minHeight="226.0" prefHeight="226.0" prefWidth="200.0">
+                     <top>
+                        <Text fx:id="title" fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="homeText" text="Current theme:" BorderPane.alignment="CENTER">
                            <font>
                               <Font name="Source Code Pro Bold" size="18.0" />
                            </font>
                         </Text>
-                        <Text fx:id="themeName" fill="WHITE" layoutX="84.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="126.8016357421875">
+                     </top>
+                     <bottom>
+                        <Text fx:id="themeName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="homeText" textAlignment="CENTER" wrappingWidth="239.62378299236298" BorderPane.alignment="CENTER">
                            <font>
                               <Font name="Source Code Pro Bold" size="18.0" />
                            </font>
                         </Text>
-                     </children>
-                  </AnchorPane>
+                     </bottom>
+                     <center>
+                        <ImageView fx:id="themePreview" fitHeight="165.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
               </items>
             </SplitPane>

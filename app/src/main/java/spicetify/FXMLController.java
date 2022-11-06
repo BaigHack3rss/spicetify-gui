@@ -6,12 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import javafx.scene.Node;
-import javafx.scene.image.ImageView;
 
 public class FXMLController {
     private Scenes scenes = new Scenes();
-    @FXML
-    ImageView themePreview;
 
     @FXML
     private void switchToHome(ActionEvent event) throws IOException {

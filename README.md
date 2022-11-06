@@ -13,7 +13,8 @@
 Graphical tool to customize the official Spotify client through spicetify-cli.
 Supports Windows, MacOS and Linux.
 
-<img src="app/src/main/resources/spicetify/images/essentials/Preview.png" alt="img" align="right" width="560px" height="400px">  
+<img src="https://iili.io/bZOTXI.md.png" alt="img" align="right" width="560px" height="400px">  
+
 
 ### Features
 - Toggle themes and extensions

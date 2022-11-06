@@ -11,6 +11,7 @@ public class OperatingSystem {
     private String operatingSystem, slashType, configDirectory;
     private String[] themes;
 
+    // constructor
     public OperatingSystem(String OS) {
         if (OS.toLowerCase().contains("win")){
             operatingSystem = "Windows";
@@ -33,6 +34,7 @@ public class OperatingSystem {
         }
     }
 
+    // tests weather the program's dependencies are met
     public boolean readyToGo() {
         try{
             File cD = new File(configDirectory);
@@ -65,6 +67,7 @@ public class OperatingSystem {
         }
     }
 
+    // reads the config file and returns a specific field
     public String readConfig(String field) {
         try{
             Scanner configScanner = new Scanner(new File(configDirectory + slashType + "config-xpui.ini"));
@@ -84,6 +87,7 @@ public class OperatingSystem {
         }
     }
 
+    // gets the current theme's preview image that the user has set through spicetify
     public Image getThemePreview(String themeName, String variant) throws IOException {
         String themePath = configDirectory + slashType + "Themes" + slashType + themeName;
         Image image = new Image(getClass().getResourceAsStream("images/essentials/icon.png"));
@@ -122,6 +126,7 @@ public class OperatingSystem {
         return image;
     }
 
+    // getters
     public String getOperatingSystem() {
         return operatingSystem;
     }

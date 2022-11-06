@@ -10,11 +10,13 @@ public class MainApp extends Application{
     private boolean readyToLaunch = os.readyToGo();
 
     @Override
-    public void start(Stage stage) throws Exception {        
+    public void start(Stage stage) throws Exception {       
+        // if spicetify is installed correctly, launch the app 
         if (readyToLaunch) {
             scenes.homeScene(stage);
         }
         else {
+            // if spicetify is not installed correctly, show an error message
             if (os.getOperatingSystem().equals("Unknown")) {
                 errorText = "Your operating system is not supported. Please use Windows, MacOS, or Linux.";
             }

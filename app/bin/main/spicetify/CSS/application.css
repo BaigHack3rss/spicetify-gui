@@ -34,3 +34,7 @@
 #regionDivider {
     -fx-background-color: #00000025;
 }
+
+.homeText {
+    -fx-fill: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #e0443ac2 0.0%, #ec6b2e 50.5943%, #f88518 100.0%)
+}
